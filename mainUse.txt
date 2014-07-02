@@ -1,0 +1,19 @@
+#import "AppDelegate.h"
+#define DELEGATE_OF_APP  ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+
+//启动：ram  实时
+-(void)openMemCheck_auto
+{
+    auto_showRAM_Lbl *lblAutoMem = ({
+                                        auto_showRAM_Lbl *lbl = [[auto_showRAM_Lbl alloc] initWithFrame:R_MAKE(0, 450, 320, 24)];
+                                        
+                                        lbl.backgroundColor = COLOR(0, 207, 150, 1);
+                                        lbl.textColor = COLOR(226, 47, 121, 1);
+                                        lbl.adjustsFontSizeToFitWidth = YES;
+                                        lbl.alpha = 0.55;
+                                        lbl.userInteractionEnabled = NO;
+                                        lbl;
+                                    });
+    
+    [DELEGATE_OF_APP.window addSubview:lblAutoMem];
+}
